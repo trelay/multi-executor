@@ -7,9 +7,9 @@ Please read this before use:
  * IF you just wanna refer my code, not use it directly, it should be OK
 
 
-As the test time in Celesitca test platform is so long that I can't withstand, I decide to write an extension to the poor test platform.
+As the test time in Celesitca test platform is so long that I can't withstand, I decide to write an extension for the poor test platform.
 
-I'd like to put it in Github to be a open project since the most of the code was done in my free time(Thanks for my kid, he went to hometown with my wife, so I can work untill 10 o'clock in night.:joy:)
+I'd like to put it in Github to be a open project since the most of the code was done in my free time(Thanks to my kid, he went to hometown with my wife, so I can work untill 10 o'clock in night.:joy:)
 
 How to add new module to this tool, there are two files are related:
 
@@ -36,7 +36,7 @@ And et this tool know you have enhanced something, in this format:
 ```python
 from main_test import HELP_FUN   # import the class you made
 help_fun = HELP_FUN()            # Create a instance of the class
-fun_add('help', help_fun)         # Add thie instance handler to function
+fun_add('help', help_fun)        # Add thie instance handler to function
 
 ```
 
