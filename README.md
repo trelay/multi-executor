@@ -2,7 +2,7 @@
 
 Please read this before use:
 
- * This tool is an extension for Celesitca Function test platform, so it doesn't support multi-task
+ * This tool is an extension for Celesitca Function test platform, as it doesn't support multi-task
  * This can save about more than 80% of the test time for product N****
  * IF you just wanna refer my code, not use it directly, it should be OK
 
