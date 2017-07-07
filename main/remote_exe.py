@@ -1,16 +1,15 @@
 #!/usr/bin/python
 import shlex, os
 from subprocess import Popen, PIPE
-from time import sleep
+#from time import sleep
 import threading
 
 def exe_cmd(log_name, command_line):
     args = shlex.split(command_line)
-    log_dir=os.path.join(os.getcwd(),"log")
+    log_dir=os.path.join(os.getcwd(),"..", "log")
     if not os.path.isdir(log_dir):
         os.mkdir(log_dir)
     file_name= os.path.join(log_dir, log_name)
-    #sleep(5)
 
     f_d=open(file_name,"w+")
     p = Popen(args, stdout=f_d, stdin=PIPE, stderr=f_d)
