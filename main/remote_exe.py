@@ -6,7 +6,7 @@ import threading
 
 def exe_cmd(log_name, command_line):
     args = shlex.split(command_line)
-    log_dir=os.path.join(os.getcwd(),"..", "log")
+    log_dir=os.path.join(os.path.dirname(__file__),"..", "log")
     if not os.path.isdir(log_dir):
         os.mkdir(log_dir)
     file_name= os.path.join(log_dir, log_name)
