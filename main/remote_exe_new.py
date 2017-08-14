@@ -3,20 +3,19 @@ import shlex, os
 from subprocess import Popen, PIPE
 #from time import sleep
 import threading
+from lib import get_current_time
 
-def exe_cmd(log_name, command_line):
-    args = shlex.split(command_line)
-    log_dir=os.path.join(os.path.dirname(__file__),"..", "log")
-    if not os.path.isdir(log_dir):
-        os.mkdir(log_dir)
-    file_name= os.path.join(log_dir, log_name)
-
-    f_d=open(file_name,"w+")
-    p = Popen(args, stdout=f_d, stdin=PIPE, stderr=f_d)
-        #Dump stdout and stderr to log file
+def exe_cmd(request, response):
+    cmd_line = shlex.split(request['command'])
+    p = Popen(cmd_line, stdout=PIPE, stdin=PIPE, stderr=PIPE)
     output = p.communicate()
-    print command_line+ " " + "executed!"
-    f_d.close()
+    returncode = p.returncode
+
+    response.update(stdout=output[0])
+    response.update(stderr=output[1])
+    response.update(returncode=returncode)
+    response.update(exe_time = get_current_time())
+    
 
 def create_thread(argv_list):
     io_thread=[]

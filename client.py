@@ -2,6 +2,7 @@
 import socket
 import sys
 import time
+import json
 # Create a TCP/IP socket
 class CLIENT(object):
     def __init__(self, sock=None):
@@ -47,7 +48,8 @@ def main():
     client.writer(cmd)
     response = client.reader()
     client.close()
-    print >>sys.stderr, response
+    response_list_decodejson = json.loads(response)
+    print response_list_decodejson
     
 if __name__=="__main__":
     main()
